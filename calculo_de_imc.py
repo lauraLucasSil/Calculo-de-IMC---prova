@@ -1,6 +1,5 @@
-nome = input("Digite seu nome: ")
-
 try:
+    nome = input("Digite seu nome: ")
     peso = float(input("Digite o seu peso: "))
     altura = float(input("Digite sua altura: "))
     
@@ -28,3 +27,6 @@ except ValueError:
 except ZeroDivisionError:
     print("Erro: A altura não pode ser zero.")
 
+with open ("cadastro_imc.txt", "a") as arquivo:
+    arquivo.write(f"Nome: {nome}\nIMC:{imc:.2f}")
+    arquivo.write("\n-----------------------------------")
